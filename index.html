@@ -1,49 +1,75 @@
-import React, { useState } from 'react';
-
-export default function Index() {
-  const [formData, setFormData] = useState({ url: '', email: '' });
-  const [status, setStatus] = useState(null);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ 
-        'form-name': 'accessibility-audit', 
-        ...formData 
-      } as any).toString(),
-    }).then(() => setStatus('success'));
-  };
-
-  return (
-    <div style={{ backgroundColor: '#121212', minHeight: '100vh', color: 'white', fontFamily: 'sans-serif', textAlign: 'center', paddingTop: '80px', paddingLeft: '20px', paddingRight: '20px' }}>
-      <nav style={{ marginBottom: '60px' }}>
-        <div style={{ fontSize: '24px', fontWeight: 'bold' }}>
-          Simply<span style={{ color: '#D4AF37' }}>Accessible</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Accessible | Premium Compliance Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { background-color: #0A0A0A; color: #FFFFFF; font-family: 'Inter', sans-serif; }
+        .gold-gradient { background: linear-gradient(90deg, #D4AF37 0%, #F2D06B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-border { border: 1px solid rgba(212, 175, 55, 0.3); }
+        .gold-button { background: linear-gradient(90deg, #D4AF37 0%, #B5952F 100%); color: #000000; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="fixed w-full z-50 py-6 px-8 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter italic">Simply<span class="gold-gradient">Accessible</span></div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#" class="hover:text-white transition">Services</a>
+                <a href="#" class="hover:text-white transition">Pricing</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
         </div>
-      </nav>
+    </nav>
 
-      <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '20px', lineHeight: '1.1' }}>
-        Make the web work for <span style={{ color: '#D4AF37' }}>everyone.</span>
-      </h1>
-      
-      {status === 'success' ? (
-        <div style={{ border: '1px solid #D4AF37', padding: '30px', borderRadius: '12px', background: '#1a1a1a', display: 'inline-block' }}>
-          <h3 style={{ color: '#D4AF37', fontSize: '1.5rem' }}>Audit Requested!</h3>
-          <p>Scanning {formData.url}. Check your inbox shortly.</p>
+    <main class="relative pt-48 pb-32 px-4 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tight leading-none">
+                Make the web work <br/>
+                <span class="gold-gradient italic">for everyone.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-16 max-w-2xl mx-auto font-light leading-relaxed">
+                Avoid costly lawsuits and capture a massive market. We provide expert WCAG audits and remediation for elite brands.
+            </p>
+
+            <div class="max-w-md mx-auto glass p-1 gold-border rounded-3xl shadow-2xl">
+                <div class="bg-[#111111] p-10 rounded-[calc(1.5rem-2px)] text-left">
+                    <h3 class="text-2xl font-bold mb-2">Request Free Audit</h3>
+                    <p class="text-gray-500 text-sm mb-8">Receive a comprehensive compliance report in your inbox.</p>
+                    
+                    <form name="accessibility-audit" method="POST" data-netlify="true" class="space-y-5">
+                        <input type="hidden" name="form-name" value="accessibility-audit">
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Website URL</label>
+                            <input type="url" name="url" placeholder="https://yourbrand.com" required 
+                                class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-[#D4AF37] outline-none transition text-white">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Business Email</label>
+                            <input type="email" name="email" placeholder="ceo@brand.com" required 
+                                class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-[#D4AF37] outline-none transition text-white">
+                        </div>
+
+                        <button type="submit" class="w-full gold-button font-black py-5 rounded-xl shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:scale-[1.02] transition active:scale-95 uppercase tracking-tighter text-lg">
+                            Get My Free Audit
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      ) : (
-        <div style={{ backgroundColor: '#1a1a1a', padding: '30px', borderRadius: '15px', border: '1px solid #333', maxWidth: '400px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '20px', fontSize: '1.2rem' }}>Get Your Free Audit</h2>
-          <form name="accessibility-audit" method="POST" data-netlify="true" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-            <input type="hidden" name="form-name" value="accessibility-audit" />
-            <input type="url" name="url" placeholder="Website URL" required onChange={(e) => setFormData({...formData, url: e.target.value})} style={{ padding: '12px', borderRadius: '8px', border: '1px solid #444', background: '#222', color: 'white' }} />
-            <input type="email" name="email" placeholder="Business Email" required onChange={(e) => setFormData({...formData, email: e.target.value})} style={{ padding: '12px', borderRadius: '8px', border: '1px solid #444', background: '#222', color: 'white' }} />
-            <button type="submit" style={{ backgroundColor: '#D4AF37', color: 'black', fontWeight: 'bold', padding: '15px', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>Start Free Audit</button>
-          </form>
-        </div>
-      )}
-    </div>
-  );
-}
+    </main>
+
+    <footer class="py-20 text-center opacity-30 text-xs tracking-widest uppercase">
+        <p>&copy; 2026 Simply Accessible. The Gold Standard in Compliance.</p>
+    </footer>
+</body>
+</html>
+    
