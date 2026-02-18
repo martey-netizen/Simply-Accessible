@@ -3,81 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simply Accessible | Premium Compliance Solutions</title>
+    <title>Simply Accessible | Elite Compliance Architecture</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { background-color: #0A0A0A; color: #FFFFFF; font-family: 'Inter', sans-serif; }
-        .gold-gradient { background: linear-gradient(90deg, #D4AF37 0%, #F2D06B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .gold-border { border: 1px solid rgba(212, 175, 55, 0.3); }
-        .gold-button { background: linear-gradient(90deg, #D4AF37 0%, #B5952F 100%); color: #000000; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap');
+        body { background-color: #050505; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #F2D06B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-bg { background: linear-gradient(135deg, #D4AF37 0%, #B5952F 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); }
+        .gold-border-card { border: 1px solid rgba(212, 175, 55, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .gold-border-card:hover { border: 1px solid rgba(212, 175, 55, 0.6); transform: translateY(-12px); background: rgba(212, 175, 55, 0.04); }
+        .glow { position: absolute; border-radius: 50%; filter: blur(120px); z-index: 0; opacity: 0.15; }
+        html { scroll-behavior: smooth; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
     </style>
 </head>
 <body class="antialiased">
-   <nav class="fixed w-full z-50 py-6 px-8 glass border-b border-white/5">
+
+    <div class="glow w-[600px] h-[600px] bg-[#D4AF37] top-[-10%] left-[-10%]"></div>
+    <div class="glow w-[500px] h-[500px] bg-[#D4AF37] bottom-[10%] right-[-5%]"></div>
+
+    <nav class="fixed w-full z-50 py-5 px-8 glass-card border-b border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="/" class="flex items-center gap-4 group">
-                <div class="h-12 w-auto flex items-center justify-center overflow-hidden">
-                    <img src="logo.png" alt="Simply Accessible Logo" class="h-full w-auto object-contain group-hover:scale-110 transition-transform duration-300">
-                </div>
-                
-                <div class="text-2xl font-black tracking-tight italic pr-10 select-none">
+                <img src="logo.png" alt="" class="h-10 w-auto group-hover:rotate-[360deg] transition-transform duration-700">
+                <div class="text-2xl font-extrabold tracking-tight italic pr-12 select-none">
                     Simply<span class="gold-gradient">Accessible</span>
                 </div>
             </a>
-
-            <div class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-[0.2em] text-gray-500">
-                <a href="#services" class="hover:text-[#D4AF37] transition-colors">Services</a>
-                <a href="#audit" class="hover:text-[#D4AF37] transition-colors">Audit</a>
-                <a href="#contact" class="hover:text-[#D4AF37] transition-colors font-black text-gray-300">Contact</a>
+            <div class="hidden lg:flex gap-12 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+                <a href="#services" class="nav-link hover:text-white transition-all">Services</a>
+                <a href="#case-studies" class="nav-link hover:text-white transition-all">Case Studies</a>
+                <a href="#process" class="nav-link hover:text-white transition-all">Method</a>
+                <a href="#pricing" class="nav-link hover:text-white transition-all">Pricing</a>
+                <a href="#audit" class="px-6 py-2 border border-[#D4AF37]/30 rounded-full text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all">Free Audit</a>
             </div>
         </div>
     </nav>
-    <main class="relative pt-48 pb-32 px-4 overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none"></div>
-        
+
+    <section class="relative pt-64 pb-32 px-6">
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tight leading-none">
-                Make the web work <br/>
-                <span class="gold-gradient italic">for everyone.</span>
+            <h1 class="text-7xl md:text-9xl font-extrabold mb-12 tracking-tighter leading-[0.85] text-white">
+                Elite Web <br/>
+                <span class="gold-gradient italic">Compliance.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-16 max-w-2xl mx-auto font-light leading-relaxed">
-                Avoid costly lawsuits and capture a massive market. We provide expert WCAG audits and remediation for elite brands.
+            <p class="text-xl md:text-2xl text-gray-400 mb-16 max-w-3xl mx-auto font-light leading-relaxed">
+                We don't just find errors. We architect inclusive digital experiences for brands that cannot afford the risk of non-compliance.
             </p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a href="#audit" class="gold-bg text-black px-12 py-6 rounded-full font-black uppercase tracking-widest text-sm hover:scale-110 transition shadow-[0_20px_50px_rgba(212,175,55,0.3)]">
+                    Start Your Audit
+                </a>
+            </div>
+        </div>
+    </section>
 
-            <div class="max-w-md mx-auto glass p-1 gold-border rounded-3xl shadow-2xl">
-                <div class="bg-[#111111] p-10 rounded-[calc(1.5rem-2px)] text-left">
-                    <h3 class="text-2xl font-bold mb-2">Request Free Audit</h3>
-                    <p class="text-gray-500 text-sm mb-8">Receive a comprehensive compliance report in your inbox.</p>
-                    
-                    <form name="accessibility-audit" method="POST" data-netlify="true" class="space-y-5">
-                        <input type="hidden" name="form-name" value="accessibility-audit">
-                        
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Website URL</label>
-                            <input type="url" name="url" placeholder="https://yourbrand.com" required 
-                                class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-[#D4AF37] outline-none transition text-white">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Business Email</label>
-                            <input type="email" name="email" placeholder="ceo@brand.com" required 
-                                class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-[#D4AF37] outline-none transition text-white">
-                        </div>
-
-                        <button type="submit" class="w-full gold-button font-black py-5 rounded-xl shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:scale-[1.02] transition active:scale-95 uppercase tracking-tighter text-lg">
-                            Get My Free Audit
-                        </button>
-                    </form>
+    <section id="services" class="py-32 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl font-extrabold tracking-tighter mb-6">Master <span class="gold-gradient italic">Solutions</span></h2>
+                <div class="h-1 w-20 gold-bg mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="gold-border-card p-12 rounded-[2.5rem] glass-card">
+                    <div class="text-[#D4AF37] mb-8 text-4xl font-light tracking-tighter">01</div>
+                    <h3 class="text-2xl font-bold mb-6">Technical Audits</h3>
+                    <p class="text-gray-400 leading-relaxed mb-8">Manual and automated WCAG 2.1/2.2 AA testing performed by certified specialists.</p>
+                    <ul class="text-xs space-y-3 text-gray-500 font-bold uppercase tracking-widest">
+                        <li>• Screen Reader Testing</li>
+                        <li>• Keyboard Navigation</li>
+                        <li>• Color Contrast Analysis</li>
+                    </ul>
+                </div>
+                <div class="gold-border-card p-12 rounded-[2.5rem] glass-card">
+                    <div class="text-[#D4AF37] mb-8 text-4xl font-light tracking-tighter">02</div>
+                    <h3 class="text-2xl font-bold mb-6">Code Remediation</h3>
+                    <p class="text-gray-400 leading-relaxed mb-8">Our developers go directly into your React, Vue, or Shopify codebase to fix issues.</p>
+                    <ul class="text-xs space-y-3 text-gray-500 font-bold uppercase tracking-widest">
+                        <li>• ARIA Implementation</li>
+                        <li>• Focus Management</li>
+                        <li>• Semantic Restructuring</li>
+                    </ul>
+                </div>
+                <div class="gold-border-card p-12 rounded-[2.5rem] glass-card">
+                    <div class="text-[#D4AF37] mb-8 text-4xl font-light tracking-tighter">03</div>
+                    <h3 class="text-2xl font-bold mb-6">Legal Strategy</h3>
+                    <p class="text-gray-400 leading-relaxed mb-8">Expert witness services and VPAT documentation to shield you from ADA lawsuits.</p>
+                    <ul class="text-xs space-y-3 text-gray-500 font-bold uppercase tracking-widest">
+                        <li>• Demand Letter Response</li>
+                        <li>• Compliance Roadmaps</li>
+                        <li>• Accessibility Statements</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="py-20 text-center opacity-30 text-xs tracking-widest uppercase">
-        <p>&copy; 2026 Simply Accessible. The Gold Standard in Compliance.</p>
+    <section id="case-studies" class="py-32 px-6 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 tracking-tight">Recent <span class="gold-gradient">Impact</span></h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group cursor-pointer overflow-hidden rounded-3xl relative h-[400px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    <div class="absolute bottom-10 left-10 z-20">
+                        <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-widest">E-Commerce</span>
+                        <h4 class="text-2xl font-bold mt-2">Fashion Giant Audit</h4>
+                        <p class="text-gray-400 text-sm mt-4">Reduced legal risk by 95% across 400+ product pages.</p>
+                    </div>
+                </div>
+                <div class="group cursor-pointer overflow-hidden rounded-3xl relative h-[400px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    <div class="absolute bottom-10 left-10 z-20">
+                        <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-widest">SaaS</span>
+                        <h4 class="text-2xl font-bold mt-2">Fintech Accessibility</h4>
+                        <p class="text-gray-400 text-sm mt-4">Engineered a compliant dashboard for 1M+ users.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-black tracking-tighter mb-4">Investment <span class="gold-gradient italic text-6xl italic">Tiers</span></h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 rounded-3xl border border-white/5">
+                    <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4">Essential</h4>
+                    <div class="text-4xl font-bold mb-8">$2,500 <span class="text-sm font-light text-gray-500">/audit</span></div>
+                    <ul class="space-y-4 mb-10 text-sm text-gray-400">
+                        <li>• Comprehensive Site Scan</li>
+                        <li>• Top 10 High-Traffic Pages</li>
+                        <li>• Remediation Roadmap</li>
+                    </ul>
+                    <a href="#audit" class="block text-center py-4 border border-white/10 rounded-xl hover:bg-white/5 transition">Get Started</a>
+                </div>
+                <div class="glass-card p-10 rounded-3xl border-[#D4AF37] border relative transform scale-105">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gold-bg text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">Most Requested</div>
+                    <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4">Enterprise</h4>
+                    <div class="text-4xl font-bold mb-8">$7,500 <span class="text-sm font-light text-gray-500">/audit</span></div>
+                    <ul class="space-y-4 mb-10 text-sm text-gray-300 font-medium">
+                        <li>• Unlimited Page Audit</li>
+                        <li>• Legal Defense Documentation</li>
+                        <li>• 20 Hours Developer Support</li>
+                        <li>• Team Training Workshop</li>
+                    </ul>
+                    <a href="#audit" class="block text-center py-4 gold-bg text-black font-bold rounded-xl hover:opacity-90 transition">Select Plan</a>
+                </div>
+                <div class="glass-card p-10 rounded-3xl border border-white/5 text-right">
+                    <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4">Consulting</h4>
+                    <div class="text-4xl font-bold mb-8 italic">Custom</div>
+                    <ul class="space-y-4 mb-10 text-sm text-gray-400">
+                        <li>• Ongoing Compliance Monitoring</li>
+                        <li>• Integration with CI/CD</li>
+                        <li>• Expert Witness Testimony</li>
+                    </ul>
+                    <a href="#audit" class="block text-center py-4 border border-white/10 rounded-xl hover:bg-white/5 transition">Inquire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="audit" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto glass-card p-1 rounded-[3rem] gold-border-card">
+            <div class="bg-[#0A0A0A] p-12 md:p-20 rounded-[2.8rem]">
+                <div class="text-center mb-12">
+                    <h2 class="text-5xl font-black mb-4 tracking-tighter italic">Secure Your <span class="gold-gradient">Future</span></h2>
+                    <p class="text-gray-500">Request a high-level audit for your enterprise domain.</p>
+                </div>
+                <form name="accessibility-audit" method="POST" data-netlify="true" class="space-y-8">
+                    <input type="hidden" name="form-name" value="accessibility-audit">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <input type="url" name="url" placeholder="Company Website URL" required class="w-full bg-white/5 border border-white/10 p-6 rounded-2xl focus:border-[#D4AF37] outline-none text-white">
+                        <input type="email" name="email" placeholder="Business Email" required class="w-full bg-white/5 border border-white/10 p-6 rounded-2xl focus:border-[#D4AF37] outline-none text-white">
+                    </div>
+                    <button type="submit" class="w-full gold-bg text-black font-black py-7 rounded-2xl shadow-2xl hover:scale-[1.02] transition-all uppercase tracking-[0.3em]">
+                        Analyze My Website
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-32 px-10 border-t border-white/5 bg-[#050505] text-center">
+        <div class="text-3xl font-black italic mb-12">Simply<span class="gold-gradient">Accessible</span></div>
+        <div class="flex justify-center gap-12 text-gray-600 text-[10px] uppercase tracking-[0.4em] mb-12">
+            <a href="#services" class="hover:text-white transition">Services</a>
+            <a href="#case-studies" class="hover:text-white transition">Works</a>
+            <a href="#pricing" class="hover:text-white transition">Pricing</a>
+        </div>
+        <p class="text-gray-700 text-[9px] uppercase tracking-[0.5em]">&copy; 2026 The Elite Compliance Agency. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
-    
+
+  
