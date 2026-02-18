@@ -17,11 +17,22 @@
 <body class="antialiased">
     <nav class="fixed w-full z-50 py-6 px-8 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter italic">Simply<span class="gold-gradient">Accessible</span></div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-                <a href="#" class="hover:text-white transition">Services</a>
-                <a href="#" class="hover:text-white transition">Pricing</a>
-                <a href="#" class="hover:text-white transition">Contact</a>
+            <a href="/" class="flex items-center gap-4 group">
+                <div class="h-10 w-10 gold-bg rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="black" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </div>
+                
+                <div class="text-2xl font-black tracking-tight italic pr-6 select-none">
+                    Simply<span class="gold-gradient">Accessible</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-[0.2em] text-gray-500">
+                <a href="#services" class="hover:text-[#D4AF37] transition-colors">Services</a>
+                <a href="#audit" class="hover:text-[#D4AF37] transition-colors">Audit</a>
+                <a href="#contact" class="hover:text-[#D4AF37] transition-colors font-black text-gray-300">Contact</a>
             </div>
         </div>
     </nav>
