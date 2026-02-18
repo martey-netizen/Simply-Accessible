@@ -1,4 +1,4 @@
-// SIMPLY ACCESSIBLE - CORE LOGIC v2.0 (FIXED)
+// SIMPLY ACCESSIBLE - CORE LOGIC v2.0 (NO DEPENDENCIES)
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. SAFEGUARD: "Skip to Content" smooth scroll
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. THE LEAD MAGNET: "Get Risk Score" Logic
-    // We select ALL buttons that look like audit triggers
     const auditTriggers = document.querySelectorAll('a[href="#audit"], button');
     
     auditTriggers.forEach(btn => {
@@ -56,3 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+     
