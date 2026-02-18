@@ -3,205 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simply Accessible | Elite Compliance Architecture</title>
+    <title>Simply Accessible | Radical Hospitality & Digital Compliance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap');
-        body { background-color: #050505; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        
+        :root { --gold: #D4AF37; --dark: #050505; }
+        body { background-color: var(--dark); color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        
+        /* TECHNICAL DIRECTIVE: WCAG 2.2 Focus Indicators */
+        *:focus-visible { outline: 3px solid var(--gold) !important; outline-offset: 4px !important; z-index: 9999 !important; }
+        
+        /* TOUCH TARGETS: Ensuring minimum 24x24px clickable areas */
+        a, button { min-height: 24px; min-width: 24px; display: inline-flex; align-items: center; transition: all 0.3s ease; }
+
         .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #F2D06B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .gold-bg { background: linear-gradient(135deg, #D4AF37 0%, #B5952F 100%); }
-        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); }
-        .gold-border-card { border: 1px solid rgba(212, 175, 55, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .gold-border-card:hover { border: 1px solid rgba(212, 175, 55, 0.6); transform: translateY(-12px); background: rgba(212, 175, 55, 0.04); }
-        .glow { position: absolute; border-radius: 50%; filter: blur(120px); z-index: 0; opacity: 0.15; }
-        html { scroll-behavior: smooth; }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background: #D4AF37; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
+        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); }
+        .stat-card { border-left: 4px solid var(--gold); background: rgba(212, 175, 55, 0.03); }
+        .hero-glow { background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%); }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="glow w-[600px] h-[600px] bg-[#D4AF37] top-[-10%] left-[-10%]"></div>
-    <div class="glow w-[500px] h-[500px] bg-[#D4AF37] bottom-[10%] right-[-5%]"></div>
-
     <nav class="fixed w-full z-50 py-5 px-8 glass-card border-b border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="/" class="flex items-center gap-4 group">
-                <img src="logo.png" alt="" class="h-10 w-auto group-hover:rotate-[360deg] transition-transform duration-700">
+                <img src="logo.png" alt="Simply Accessible Logo" class="h-10 w-auto group-hover:scale-110 transition-transform">
                 <div class="text-2xl font-extrabold tracking-tight italic pr-12 select-none">
                     Simply<span class="gold-gradient">Accessible</span>
                 </div>
             </a>
-            <div class="hidden lg:flex gap-12 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
-                <a href="#services" class="nav-link hover:text-white transition-all">Services</a>
-                <a href="#case-studies" class="nav-link hover:text-white transition-all">Case Studies</a>
-                <a href="#process" class="nav-link hover:text-white transition-all">Method</a>
-                <a href="#pricing" class="nav-link hover:text-white transition-all">Pricing</a>
-                <a href="#audit" class="px-6 py-2 border border-[#D4AF37]/30 rounded-full text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all">Free Audit</a>
+            <div class="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+                <a href="#mission" class="hover:text-white transition-all">Mission</a>
+                <a href="#services" class="hover:text-white transition-all">Services</a>
+                <a href="#about" class="hover:text-white transition-all">About</a>
+                <a href="#audit" class="px-6 py-2 border border-[#D4AF37]/40 rounded-full text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all">Audit My Reach</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-64 pb-32 px-6">
+    <section class="relative pt-64 pb-32 px-6 hero-glow">
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <h1 class="text-7xl md:text-9xl font-extrabold mb-12 tracking-tighter leading-[0.85] text-white">
-                Elite Web <br/>
-                <span class="gold-gradient italic">Compliance.</span>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-10 tracking-tighter leading-tight">
+                Is Your Digital Front Door <br/>
+                <span class="gold-gradient italic">Locked to 25% of Your Neighbors?</span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-400 mb-16 max-w-3xl mx-auto font-light leading-relaxed">
-                We don't just find errors. We architect inclusive digital experiences for brands that cannot afford the risk of non-compliance.
+                In 2026, accessibility isn't just compliance. <br/>
+                <span class="text-white font-semibold italic">It's radical hospitality.</span>
             </p>
-            <div class="flex flex-wrap justify-center gap-8">
-                <a href="#audit" class="gold-bg text-black px-12 py-6 rounded-full font-black uppercase tracking-widest text-sm hover:scale-110 transition shadow-[0_20px_50px_rgba(212,175,55,0.3)]">
-                    Start Your Audit
-                </a>
+            <a href="#audit" aria-label="Request a digital reach audit" class="bg-[#D4AF37] text-black px-12 py-6 rounded-full font-black uppercase tracking-widest text-sm hover:scale-105 transition shadow-2xl">
+                Audit My Digital Reach
+            </a>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#080808]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="stat-card p-10 rounded-r-3xl">
+                <div class="text-4xl font-black mb-2 gold-gradient">70 Million</div>
+                <p class="text-gray-400 text-sm leading-relaxed">U.S. adults report a disability. A massive demographic often left behind.</p>
+            </div>
+            <div class="stat-card p-10 rounded-r-3xl">
+                <div class="text-4xl font-black mb-2 gold-gradient">61 Million</div>
+                <p class="text-gray-400 text-sm leading-relaxed">Seniors who need clear text and simple navigation to engage with your mission.</p>
+            </div>
+            <div class="stat-card p-10 rounded-r-3xl">
+                <div class="text-4xl font-black mb-2 gold-gradient">$490 Billion</div>
+                <p class="text-gray-400 text-sm leading-relaxed">Disposable income of adults with disabilities—an untapped community opportunity.</p>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-32 px-6 relative">
+    <section id="mission" class="py-32 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <blockquote class="text-2xl md:text-4xl font-light italic leading-relaxed text-gray-300">
+                "We believe a '404 Error' is a closed door. We believe a confused form is a stumbling block. We translate technical standards into <span class="text-white font-bold">ministry opportunities</span>."
+            </blockquote>
+            <div class="mt-12 text-[#D4AF37] font-bold uppercase tracking-widest text-xs">— The Nehemiah Protocol</div>
+        </div>
+    </section>
+
+    <section id="services" class="py-32 px-6 glass-card border-y border-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-24">
-                <h2 class="text-5xl font-extrabold tracking-tighter mb-6">Master <span class="gold-gradient italic">Solutions</span></h2>
-                <div class="h-1 w-20 gold-bg mx-auto rounded-full"></div>
+            <div class="mb-20">
+                <h2 class="text-5xl font-extrabold mb-6 tracking-tight">We Don't Fix Bugs. <br/><span class="gold-gradient italic text-6xl">We Clear Paths.</span></h2>
+                <p class="text-gray-500 max-w-2xl">We build to WCAG 2.2 Level AA because it offers equivalent facilitation and better usability for mobile and cognitive accessibility.</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-10">
-                <div class="gold-border-card p-12 rounded-[2.5rem] glass-card">
-                    <div class="text-[#D4AF37] mb-8 text-4xl font-light tracking-tighter">01</div>
-                    <h3 class="text-2xl font-bold mb-6">Technical Audits</h3>
-                    <p class="text-gray-400 leading-relaxed mb-8">Manual and automated WCAG 2.1/2.2 AA testing performed by certified specialists.</p>
-                    <ul class="text-xs space-y-3 text-gray-500 font-bold uppercase tracking-widest">
-                        <li>• Screen Reader Testing</li>
-                        <li>• Keyboard Navigation</li>
-                        <li>• Color Contrast Analysis</li>
-                    </ul>
+                <div class="p-10 rounded-[3rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
+                    <h3 class="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] mb-6">Reach Audit</h3>
+                    <h4 class="text-2xl font-bold mb-6">Digital Reach & Risk Assessment</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">Human-led testing against WCAG 2.2 benchmarks. We test the "critical paths": donations, enrollment, and registration.</p>
                 </div>
-                <div class="gold-border-card p-12 rounded-[2.5rem] glass-card">
-                    <div class="text-[#D4AF37] mb-8 text-4xl font-light tracking-tighter">02</div>
-                    <h3 class="text-2xl font-bold mb-6">Code Remediation</h3>
-                    <p class="text-gray-400 leading-relaxed mb-8">Our developers go directly into your React, Vue, or Shopify codebase to fix issues.</p>
-                    <ul class="text-xs space-y-3 text-gray-500 font-bold uppercase tracking-widest">
-                        <li>• ARIA Implementation</li>
-                        <li>• Focus Management</li>
-                        <li>• Semantic Restructuring</li>
-                    </ul>
+                <div class="p-10 rounded-[3rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all">
+                    <h3 class="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] mb-6">Remediation</h3>
+                    <h4 class="text-2xl font-bold mb-6">Friction Removal & Retrofit</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">We recode your site to be keyboard-first. We implement "Focus Not Obscured" protections so users never get lost.</p>
                 </div>
-                <div class="gold-border-card p-12 rounded-[2.5rem] glass-card">
-                    <div class="text-[#D4AF37] mb-8 text-4xl font-light tracking-tighter">03</div>
-                    <h3 class="text-2xl font-bold mb-6">Legal Strategy</h3>
-                    <p class="text-gray-400 leading-relaxed mb-8">Expert witness services and VPAT documentation to shield you from ADA lawsuits.</p>
-                    <ul class="text-xs space-y-3 text-gray-500 font-bold uppercase tracking-widest">
-                        <li>• Demand Letter Response</li>
-                        <li>• Compliance Roadmaps</li>
-                        <li>• Accessibility Statements</li>
-                    </ul>
+                <div class="p-10 rounded-[3rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all">
+                    <h3 class="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] mb-6">Governance</h3>
+                    <h4 class="text-2xl font-bold mb-6">Content Stewardship</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">Converting image-only PDFs and ensuring video captions. Effective communication is a legal and moral duty.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="case-studies" class="py-32 px-6 bg-white/[0.02]">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold mb-16 tracking-tight">Recent <span class="gold-gradient">Impact</span></h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="group cursor-pointer overflow-hidden rounded-3xl relative h-[400px]">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                    <div class="absolute bottom-10 left-10 z-20">
-                        <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-widest">E-Commerce</span>
-                        <h4 class="text-2xl font-bold mt-2">Fashion Giant Audit</h4>
-                        <p class="text-gray-400 text-sm mt-4">Reduced legal risk by 95% across 400+ product pages.</p>
-                    </div>
-                </div>
-                <div class="group cursor-pointer overflow-hidden rounded-3xl relative h-[400px]">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                    <div class="absolute bottom-10 left-10 z-20">
-                        <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-widest">SaaS</span>
-                        <h4 class="text-2xl font-bold mt-2">Fintech Accessibility</h4>
-                        <p class="text-gray-400 text-sm mt-4">Engineered a compliant dashboard for 1M+ users.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl font-black tracking-tighter mb-4">Investment <span class="gold-gradient italic text-6xl italic">Tiers</span></h2>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-10 rounded-3xl border border-white/5">
-                    <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4">Essential</h4>
-                    <div class="text-4xl font-bold mb-8">$2,500 <span class="text-sm font-light text-gray-500">/audit</span></div>
-                    <ul class="space-y-4 mb-10 text-sm text-gray-400">
-                        <li>• Comprehensive Site Scan</li>
-                        <li>• Top 10 High-Traffic Pages</li>
-                        <li>• Remediation Roadmap</li>
-                    </ul>
-                    <a href="#audit" class="block text-center py-4 border border-white/10 rounded-xl hover:bg-white/5 transition">Get Started</a>
-                </div>
-                <div class="glass-card p-10 rounded-3xl border-[#D4AF37] border relative transform scale-105">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gold-bg text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">Most Requested</div>
-                    <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4">Enterprise</h4>
-                    <div class="text-4xl font-bold mb-8">$7,500 <span class="text-sm font-light text-gray-500">/audit</span></div>
-                    <ul class="space-y-4 mb-10 text-sm text-gray-300 font-medium">
-                        <li>• Unlimited Page Audit</li>
-                        <li>• Legal Defense Documentation</li>
-                        <li>• 20 Hours Developer Support</li>
-                        <li>• Team Training Workshop</li>
-                    </ul>
-                    <a href="#audit" class="block text-center py-4 gold-bg text-black font-bold rounded-xl hover:opacity-90 transition">Select Plan</a>
-                </div>
-                <div class="glass-card p-10 rounded-3xl border border-white/5 text-right">
-                    <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4">Consulting</h4>
-                    <div class="text-4xl font-bold mb-8 italic">Custom</div>
-                    <ul class="space-y-4 mb-10 text-sm text-gray-400">
-                        <li>• Ongoing Compliance Monitoring</li>
-                        <li>• Integration with CI/CD</li>
-                        <li>• Expert Witness Testimony</li>
-                    </ul>
-                    <a href="#audit" class="block text-center py-4 border border-white/10 rounded-xl hover:bg-white/5 transition">Inquire</a>
-                </div>
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-8 tracking-tighter">Systems Engineers with a <span class="gold-gradient italic">Shepherd’s Heart.</span></h2>
+            <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
+                <p>We understand that 2026 is a "litigation moment," but your organization is mission-driven. Whether you are a church, a private school, or a nonprofit, we guide you through the complexity.</p>
+                <p class="text-white font-medium italic">We don't just help you avoid a lawsuit. We help you signal to your community: "You Belong Here."</p>
             </div>
         </div>
     </section>
 
     <section id="audit" class="py-32 px-6">
-        <div class="max-w-4xl mx-auto glass-card p-1 rounded-[3rem] gold-border-card">
-            <div class="bg-[#0A0A0A] p-12 md:p-20 rounded-[2.8rem]">
-                <div class="text-center mb-12">
-                    <h2 class="text-5xl font-black mb-4 tracking-tighter italic">Secure Your <span class="gold-gradient">Future</span></h2>
-                    <p class="text-gray-500">Request a high-level audit for your enterprise domain.</p>
+        <div class="max-w-4xl mx-auto glass-card p-1 rounded-[3.5rem] border-[#D4AF37]/20">
+            <div class="bg-[#0A0A0A] p-12 md:p-20 rounded-[3.3rem]">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-black mb-6 tracking-tighter">Request Your <span class="gold-gradient italic">Reach Analysis</span></h2>
+                    <p class="text-gray-500">In accordance with WCAG 2.2 AA privacy and labels standards.</p>
                 </div>
                 <form name="accessibility-audit" method="POST" data-netlify="true" class="space-y-8">
                     <input type="hidden" name="form-name" value="accessibility-audit">
                     <div class="grid md:grid-cols-2 gap-8">
-                        <input type="url" name="url" placeholder="Company Website URL" required class="w-full bg-white/5 border border-white/10 p-6 rounded-2xl focus:border-[#D4AF37] outline-none text-white">
-                        <input type="email" name="email" placeholder="Business Email" required class="w-full bg-white/5 border border-white/10 p-6 rounded-2xl focus:border-[#D4AF37] outline-none text-white">
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-4">Company/Org URL</label>
+                            <input type="url" name="url" placeholder="https://mission.org" required class="w-full bg-white/5 border border-white/10 p-6 rounded-3xl focus:border-[#D4AF37] outline-none text-white">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-4">Contact Email</label>
+                            <input type="email" name="email" placeholder="steward@mission.org" required class="w-full bg-white/5 border border-white/10 p-6 rounded-3xl focus:border-[#D4AF37] outline-none text-white">
+                        </div>
                     </div>
-                    <button type="submit" class="w-full gold-bg text-black font-black py-7 rounded-2xl shadow-2xl hover:scale-[1.02] transition-all uppercase tracking-[0.3em]">
-                        Analyze My Website
+                    <button type="submit" class="w-full bg-[#D4AF37] text-black font-black py-7 rounded-3xl shadow-2xl hover:scale-[1.02] transition-all uppercase tracking-[0.4em] text-xs">
+                        Audit My Reach
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-32 px-10 border-t border-white/5 bg-[#050505] text-center">
-        <div class="text-3xl font-black italic mb-12">Simply<span class="gold-gradient">Accessible</span></div>
-        <div class="flex justify-center gap-12 text-gray-600 text-[10px] uppercase tracking-[0.4em] mb-12">
-            <a href="#services" class="hover:text-white transition">Services</a>
-            <a href="#case-studies" class="hover:text-white transition">Works</a>
-            <a href="#pricing" class="hover:text-white transition">Pricing</a>
-        </div>
-        <p class="text-gray-700 text-[9px] uppercase tracking-[0.5em]">&copy; 2026 The Elite Compliance Agency. All Rights Reserved.</p>
+    <footer class="py-20 text-center border-t border-white/5">
+        <div class="text-2xl font-black italic mb-6">Simply<span class="gold-gradient">Accessible</span></div>
+        <p class="text-[9px] text-gray-700 uppercase tracking-[0.6em] mb-4 font-bold">The Nehemiah Protocol | WCAG 2.2 AA Certified Approach</p>
+        <p class="text-gray-800 text-[8px] uppercase tracking-widest">&copy; 2026 Leading with Radical Hospitality.</p>
     </footer>
 
 </body>
 </html>
-
-  
