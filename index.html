@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simply Accessible | Radical Hospitality & Digital Compliance</title>
+    <title>Simply Accessible | Marty Cornog</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap');
@@ -11,136 +11,128 @@
         :root { --gold: #D4AF37; --dark: #050505; }
         body { background-color: var(--dark); color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         
-        /* TECHNICAL DIRECTIVE: WCAG 2.2 Focus Indicators */
-        *:focus-visible { outline: 3px solid var(--gold) !important; outline-offset: 4px !important; z-index: 9999 !important; }
+        /* WCAG 2.2 Focus Indicators */
+        *:focus-visible { outline: 3px solid var(--gold) !important; outline-offset: 4px !important; z-index: 9999; }
         
-        /* TOUCH TARGETS: Ensuring minimum 24x24px clickable areas */
-        a, button { min-height: 24px; min-width: 24px; display: inline-flex; align-items: center; transition: all 0.3s ease; }
-
         .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #F2D06B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* FIX: Global Italic Clipping Prevention */
+        .no-clip { display: inline-block; padding-right: 0.35em; font-style: italic; }
+        
         .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); }
-        .stat-card { border-left: 4px solid var(--gold); background: rgba(212, 175, 55, 0.03); }
-        .hero-glow { background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%); }
+        .hero-glow { background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%); }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased overflow-x-hidden text-gray-200">
 
     <nav class="fixed w-full z-50 py-5 px-8 glass-card border-b border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="/" class="flex items-center gap-4 group">
-                <img src="logo.png" alt="Simply Accessible Logo" class="h-10 w-auto group-hover:scale-110 transition-transform">
-                <div class="text-2xl font-extrabold tracking-tight italic pr-12 select-none">
-                    Simply<span class="gold-gradient">Accessible</span>
+            <a href="/" class="flex items-center gap-2">
+                <div class="text-2xl font-extrabold tracking-tight select-none text-white">
+                    Simply<span class="gold-gradient no-clip">Accessible</span>
                 </div>
             </a>
-            <div class="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+            <div class="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">
                 <a href="#mission" class="hover:text-white transition-all">Mission</a>
+                <a href="#impact" class="hover:text-white transition-all">Impact</a>
                 <a href="#services" class="hover:text-white transition-all">Services</a>
-                <a href="#about" class="hover:text-white transition-all">About</a>
                 <a href="#audit" class="px-6 py-2 border border-[#D4AF37]/40 rounded-full text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all">Audit My Reach</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-64 pb-32 px-6 hero-glow">
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-10 tracking-tighter leading-tight">
+    <section class="relative pt-64 pb-20 px-6 hero-glow">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-10 tracking-tighter leading-tight text-white">
                 Is Your Digital Front Door <br/>
-                <span class="gold-gradient italic">Locked to 25% of Your Neighbors?</span>
+                <span class="gold-gradient no-clip">Locked to 25% of Your Neighbors?</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-16 max-w-3xl mx-auto font-light leading-relaxed">
+            <p class="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                 In 2026, accessibility isn't just compliance. <br/>
                 <span class="text-white font-semibold italic">It's radical hospitality.</span>
             </p>
-            <a href="#audit" aria-label="Request a digital reach audit" class="bg-[#D4AF37] text-black px-12 py-6 rounded-full font-black uppercase tracking-widest text-sm hover:scale-105 transition shadow-2xl">
+            <a href="#audit" class="bg-[#D4AF37] text-black px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px] hover:scale-105 transition shadow-2xl">
                 Audit My Digital Reach
             </a>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-[#080808]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="stat-card p-10 rounded-r-3xl">
-                <div class="text-4xl font-black mb-2 gold-gradient">70 Million</div>
-                <p class="text-gray-400 text-sm leading-relaxed">U.S. adults report a disability. A massive demographic often left behind.</p>
+    <section id="impact" class="py-32 px-6 relative max-w-7xl mx-auto">
+        <div class="grid grid-cols-12 gap-6 items-center">
+            
+            <div class="col-span-12 md:col-span-7 glass-card p-12 rounded-[3rem] border-l-4 border-l-[#D4AF37] relative z-20">
+                <div class="text-7xl md:text-8xl font-black gold-gradient tracking-tighter mb-4">70M</div>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-gray-300">The Scope of the Need</h3>
+                <p class="text-gray-500 leading-relaxed max-w-md">Over 70 million U.S. adults report living with a disability. This is not a niche demographic; it is our community at large.</p>
             </div>
-            <div class="stat-card p-10 rounded-r-3xl">
-                <div class="text-4xl font-black mb-2 gold-gradient">61 Million</div>
-                <p class="text-gray-400 text-sm leading-relaxed">Seniors who need clear text and simple navigation to engage with your mission.</p>
+
+            <div class="col-span-12 md:col-span-5 md:-ml-12 mt-4 md:mt-24 glass-card p-10 rounded-[2.5rem] bg-white/[0.03] relative z-10 border border-white/5">
+                <div class="text-5xl font-black text-white tracking-tighter mb-2">61 Million</div>
+                <h3 class="text-[10px] font-bold gold-gradient uppercase tracking-widest mb-4">Seniors & Citizens</h3>
+                <p class="text-gray-500 text-xs leading-relaxed">Our elders require clear navigation and legible text to remain engaged in the digital town square.</p>
             </div>
-            <div class="stat-card p-10 rounded-r-3xl">
-                <div class="text-4xl font-black mb-2 gold-gradient">$490 Billion</div>
-                <p class="text-gray-400 text-sm leading-relaxed">Disposable income of adults with disabilities—an untapped community opportunity.</p>
+
+            <div class="col-span-12 md:col-span-8 md:col-start-3 mt-8 md:-mt-8 glass-card p-12 rounded-[3rem] text-center border-t-4 border-t-[#D4AF37]/30 relative z-30 shadow-2xl">
+                <div class="text-2xl font-black text-white italic mb-4">Stewardship of the Message</div>
+                <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                    While the collective disposable income of this community exceeds <span class="text-white font-bold">$490 Billion</span>, our focus remains on <span class="gold-gradient no-clip font-bold">dignity</span>. Every person deserves equal access to your mission.
+                </p>
             </div>
         </div>
     </section>
 
     <section id="mission" class="py-32 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <blockquote class="text-2xl md:text-4xl font-light italic leading-relaxed text-gray-300">
+            <blockquote class="text-xl md:text-3xl font-light italic leading-relaxed text-gray-400">
                 "We believe a '404 Error' is a closed door. We believe a confused form is a stumbling block. We translate technical standards into <span class="text-white font-bold">ministry opportunities</span>."
             </blockquote>
-            <div class="mt-12 text-[#D4AF37] font-bold uppercase tracking-widest text-xs">— The Nehemiah Protocol</div>
+            <div class="mt-12 text-[#D4AF37] font-bold uppercase tracking-widest text-[10px]">
+                — Marty Cornog, Founder of Simply Accessible
+            </div>
         </div>
     </section>
 
     <section id="services" class="py-32 px-6 glass-card border-y border-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="mb-20">
-                <h2 class="text-5xl font-extrabold mb-6 tracking-tight">We Don't Fix Bugs. <br/><span class="gold-gradient italic text-6xl">We Clear Paths.</span></h2>
-                <p class="text-gray-500 max-w-2xl">We build to WCAG 2.2 Level AA because it offers equivalent facilitation and better usability for mobile and cognitive accessibility.</p>
+            <div class="mb-20 text-center md:text-left">
+                <h2 class="text-4xl font-extrabold mb-6 tracking-tight">We Don't Fix Bugs. <br/><span class="gold-gradient no-clip text-5xl">We Clear Paths.</span></h2>
+                <p class="text-gray-500 text-sm">WCAG 2.2 AA Compliance Strategy.</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="p-10 rounded-[3rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
-                    <h3 class="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] mb-6">Reach Audit</h3>
-                    <h4 class="text-2xl font-bold mb-6">Digital Reach & Risk Assessment</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8">Human-led testing against WCAG 2.2 benchmarks. We test the "critical paths": donations, enrollment, and registration.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-10 rounded-[2.5rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
+                    <h3 class="text-[#D4AF37] text-[9px] font-black uppercase tracking-[0.3em] mb-4 text-center">Assessment</h3>
+                    <h4 class="text-xl font-bold mb-4 text-center text-white">Digital Reach & Risk</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed text-center">Human-led testing against WCAG 2.2 benchmarks to open doors for every user.</p>
                 </div>
-                <div class="p-10 rounded-[3rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all">
-                    <h3 class="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] mb-6">Remediation</h3>
-                    <h4 class="text-2xl font-bold mb-6">Friction Removal & Retrofit</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8">We recode your site to be keyboard-first. We implement "Focus Not Obscured" protections so users never get lost.</p>
+                <div class="p-10 rounded-[2.5rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all">
+                    <h3 class="text-[#D4AF37] text-[9px] font-black uppercase tracking-[0.3em] mb-4 text-center">Remediation</h3>
+                    <h4 class="text-xl font-bold mb-4 text-center text-white">Friction Removal</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed text-center">Recoding your experience to be keyboard-first, ensuring no neighbor is obscured.</p>
                 </div>
-                <div class="p-10 rounded-[3rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all">
-                    <h3 class="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] mb-6">Governance</h3>
-                    <h4 class="text-2xl font-bold mb-6">Content Stewardship</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8">Converting image-only PDFs and ensuring video captions. Effective communication is a legal and moral duty.</p>
+                <div class="p-10 rounded-[2.5rem] border border-white/5 hover:border-[#D4AF37]/40 transition-all">
+                    <h3 class="text-[#D4AF37] text-[9px] font-black uppercase tracking-[0.3em] mb-4 text-center">Governance</h3>
+                    <h4 class="text-xl font-bold mb-4 text-center text-white">Content Stewardship</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed text-center">Captions and accessible documents are the hallmarks of an inclusive message.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold mb-8 tracking-tighter">Systems Engineers with a <span class="gold-gradient italic">Shepherd’s Heart.</span></h2>
-            <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
-                <p>We understand that 2026 is a "litigation moment," but your organization is mission-driven. Whether you are a church, a private school, or a nonprofit, we guide you through the complexity.</p>
-                <p class="text-white font-medium italic">We don't just help you avoid a lawsuit. We help you signal to your community: "You Belong Here."</p>
             </div>
         </div>
     </section>
 
     <section id="audit" class="py-32 px-6">
-        <div class="max-w-4xl mx-auto glass-card p-1 rounded-[3.5rem] border-[#D4AF37]/20">
-            <div class="bg-[#0A0A0A] p-12 md:p-20 rounded-[3.3rem]">
-                <div class="text-center mb-16">
-                    <h2 class="text-5xl font-black mb-6 tracking-tighter">Request Your <span class="gold-gradient italic">Reach Analysis</span></h2>
-                    <p class="text-gray-500">In accordance with WCAG 2.2 AA privacy and labels standards.</p>
+        <div class="max-w-3xl mx-auto glass-card p-1 rounded-[3rem] border-[#D4AF37]/20">
+            <div class="bg-[#0A0A0A] p-10 md:p-16 rounded-[2.8rem]">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-black mb-4 tracking-tighter text-white">Request Your <span class="gold-gradient no-clip">Reach Analysis</span></h2>
+                    <p class="text-gray-500 text-xs italic">Consult with Marty Cornog on WCAG 2.2 AA standards.</p>
                 </div>
-                <form name="accessibility-audit" method="POST" data-netlify="true" class="space-y-8">
+                <form name="accessibility-audit" method="POST" data-netlify="true" class="space-y-6">
                     <input type="hidden" name="form-name" value="accessibility-audit">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="space-y-2">
-                            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-4">Company/Org URL</label>
-                            <input type="url" name="url" placeholder="https://mission.org" required class="w-full bg-white/5 border border-white/10 p-6 rounded-3xl focus:border-[#D4AF37] outline-none text-white">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-4">Contact Email</label>
-                            <input type="email" name="email" placeholder="steward@mission.org" required class="w-full bg-white/5 border border-white/10 p-6 rounded-3xl focus:border-[#D4AF37] outline-none text-white">
-                        </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="url" name="url" placeholder="Company URL" required class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl focus:border-[#D4AF37] outline-none text-white text-sm">
+                        <input type="email" name="email" placeholder="Contact Email" required class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl focus:border-[#D4AF37] outline-none text-white text-sm">
                     </div>
-                    <button type="submit" class="w-full bg-[#D4AF37] text-black font-black py-7 rounded-3xl shadow-2xl hover:scale-[1.02] transition-all uppercase tracking-[0.4em] text-xs">
+                    <button type="submit" class="w-full bg-[#D4AF37] text-black font-black py-5 rounded-2xl hover:scale-[1.01] transition-all uppercase tracking-[0.4em] text-[9px]">
                         Audit My Reach
                     </button>
                 </form>
@@ -149,10 +141,13 @@
     </section>
 
     <footer class="py-20 text-center border-t border-white/5">
-        <div class="text-2xl font-black italic mb-6">Simply<span class="gold-gradient">Accessible</span></div>
-        <p class="text-[9px] text-gray-700 uppercase tracking-[0.6em] mb-4 font-bold">The Nehemiah Protocol | WCAG 2.2 AA Certified Approach</p>
-        <p class="text-gray-800 text-[8px] uppercase tracking-widest">&copy; 2026 Leading with Radical Hospitality.</p>
+        <div class="text-2xl font-black italic mb-6 text-white">Simply<span class="gold-gradient no-clip">Accessible</span></div>
+        <p class="text-[8px] text-gray-700 uppercase tracking-[0.5em] mb-2 font-bold">Martey Cornog | Founder</p>
+        <p class="text-gray-800 text-[7px] tracking-widest uppercase">&copy; 2026 Radical Hospitality In Digital Spaces.</p>
     </footer>
 
 </body>
 </html>
+ 
+  
+     
