@@ -1,1 +1,14 @@
+name: "2026 Compliance Check"
+on: [push, pull_request]
 
+jobs:
+  pa11y-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit for WCAG 2.2 AA
+        uses: wpengine/action-pa11y@master
+        with:
+          url: "https://simplyaccessible.me"
+          standard: "WCAG2AA"
+          threshold: 0
