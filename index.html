@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simply Accessible | 2026 Compliance Audit</title>
+    <title>Simply Accessible | Digital Inclusion Consulting</title>
+    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
-       (function(){
-          // Initialize EmailJS with your Public Key (Get this from emailjs.com)
-          // For now, it is initialized. You will paste your key in script.js
-          emailjs.init("YOUR_PUBLIC_KEY");
-       })();
+       (function(){ emailjs.init("YOUR_PUBLIC_KEY"); })();
     </script>
     
     <style>
         :root {
-            --primary-blue: #2563eb;
-            --primary-hover: #1d4ed8;
+            --primary-blue: #004B87;
+            --primary-hover: #003d7a;
+            --action-orange: #E65C00;
             --bg-color: #f8f9fa;
             --text-dark: #1a1a1a;
             --text-light: #666;
@@ -27,128 +25,145 @@
             background-color: var(--bg-color);
             color: var(--text-dark);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             line-height: 1.6;
         }
 
-        .container { max-width: 800px; margin: 0 auto; }
-        
-        header { text-align: center; margin-bottom: 40px; }
-        
-        /* WIDGET STYLES */
-        .compliance-widget {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e5e7eb;
-            overflow: hidden;
-            margin-bottom: 30px;
+        /* 2026 WCAG 2.2 Guardrails */
+        :focus-visible {
+            outline: 4px solid var(--action-orange) !important;
+            outline-offset: 4px;
+            border-radius: 2px;
         }
-
-        .widget-header {
-            background: #f8f9fa;
-            padding: 20px 30px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .widget-header h2 { margin: 0; font-size: 1.25rem; color: var(--text-dark); }
-        .widget-header p { margin: 5px 0 0; color: var(--text-light); font-size: 0.9rem; }
-
-        .interface-card {
-            padding: 30px;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* ANIMATIONS */
-        .fade-in { animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* BUTTONS (WCAG 2.2 Compliant) */
-        .action-btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 1rem;
-            min-height: 44px; /* WCAG Target Size */
+        button, .action-btn, input, nav a {
+            min-height: 44px; /* Mobile Tap Target Minimum */
             min-width: 44px;
-            transition: background-color 0.2s;
         }
 
-        .action-btn.primary { background: var(--primary-blue); color: white; width: 100%; }
-        .action-btn.primary:hover { background: var(--primary-hover); }
-
-        .btn-group { display: flex; gap: 15px; margin-top: 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
-        .action-btn.option {
-            flex: 1;
-            background: #f1f5f9;
-            color: #334155;
-            border: 1px solid #cbd5e1;
-        }
-        .action-btn.option:hover { background: #e2e8f0; border-color: #94a3b8; }
+        /* Navigation */
+        header.site-nav { background: #fff; padding: 20px 0; border-bottom: 1px solid #e5e7eb; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-blue); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-dark); font-weight: 600; }
 
-        /* RESULTS STYLING */
+        /* Hero Section */
+        .hero { background: var(--primary-blue); color: white; padding: 80px 0; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+        
+        /* Services Section */
+        .services { padding: 60px 0; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary-blue); text-align: left; }
+
+        /* Widget Styles (From your original code) */
+        .calculator-section { padding: 60px 0; background: #e2e8f0; }
+        .compliance-widget { background: #fff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; overflow: hidden; margin-bottom: 30px; max-width: 800px; margin: 0 auto 30px; }
+        .widget-header { background: #f8f9fa; padding: 20px 30px; border-bottom: 1px solid #eee; }
+        .widget-header h2 { margin: 0; font-size: 1.25rem; color: var(--text-dark); }
+        .interface-card { padding: 30px; min-height: 200px; display: flex; flex-direction: column; justify-content: center; }
+        
+        .action-btn { padding: 12px 24px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 1rem; transition: background-color 0.2s; }
+        .action-btn.primary { background: var(--action-orange); color: white; width: 100%; text-decoration: none; display: inline-block; }
+        .action-btn.primary:hover { background: #CC5200; }
+        .btn-group { display: flex; gap: 15px; margin-top: 20px; }
+        .action-btn.option { flex: 1; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+        .action-btn.option:hover { background: #e2e8f0; }
+
+        /* Results */
         .result-card { padding: 20px; border-radius: 8px; border-left: 5px solid; text-align: left; }
         .result-card.high { background: #fee2e2; border-color: #dc2626; color: #7f1d1d; }
         .result-card.critical { background: #fef2f2; border-color: #991b1b; color: #7f1d1d; }
         .result-card.medium { background: #fef9c3; border-color: #ca8a04; color: #713f12; }
         .result-card.moderate { background: #f0fdf4; border-color: #16a34a; color: #14532d; }
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* FORM INPUTS */
-        input[type="email"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            box-sizing: border-box; /* Fixes padding width issue */
-        }
+        input[type="email"] { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Simply Accessible</h1>
-        <p>Digital Inclusion for Mission-Driven Organizations (2026 Standards)</p>
+    <header class="site-nav">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Simply Accessible</a>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="audit.html">Technical Checklist</a>
+                <a href="#calculator">Risk Calculator</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="risk-widget" class="compliance-widget">
-        <div class="widget-header">
-            <h2>2026 Compliance Risk Calculator</h2>
-            [cite_start]<p>Check your exposure under ADA Title II & III[cite: 6].</p>
+    <section class="hero">
+        <div class="container">
+            <h1>Digital Accessibility is Radical Hospitality.</h1>
+            <p>We help mission-driven organizations meet 2026 WCAG 2.2 compliance standards while growing their reach and protecting their funding.</p>
+            <a href="#calculator" class="action-btn primary" style="width: auto;">Assess Your Risk</a>
         </div>
-        <div id="assessment-interface" class="interface-card">
-            <div id="start-view" class="fade-in">
-                <div style="font-size: 2.5rem; margin-bottom: 15px;">⚖️</div>
-                <h3>Start Your Risk Analysis</h3>
-                <p>Over 5,000 accessibility lawsuits were filed last year. Are you at risk?</p>
-                <button onclick="startAssessment()" class="action-btn primary" style="margin-top:20px;">Begin Free Assessment</button>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--primary-blue);">WCAG 2.2 AA Audits</h3>
+                    <p>Comprehensive manual and automated testing to ensure your site is legally defensible and usable by everyone.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-blue);">Code Remediation</h3>
+                    <p>We work directly with your web team to fix contrast, form labels, and mobile tap targets.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-blue);">Document Inclusion</h3>
+                    <p>Conversion of inaccessible "image-only" PDFs and flyers into compliant digital formats.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="compliance-widget">
-        <div class="widget-header">
-            <h2>Request Technical Audit</h2>
-            <p>Get a WCAG 2.2 AA breakdown sent to your inbox.</p>
-        </div>
-        <div class="interface-card" style="min-height: auto;">
-            <form id="audit-form">
-                <label for="user_email" style="display:block; margin-bottom:8px; font-weight:600;">Email Address</label>
-                <input type="email" name="user_email" id="user_email" required placeholder="name@organization.org">
-                <button type="submit" class="action-btn primary">Generate Audit Report</button>
-            </form>
-            <div id="audit-status" style="margin-top:15px; font-weight:600;" aria-live="polite"></div>
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">2026 Compliance Assessment</h2>
+            
+            <div id="risk-widget" class="compliance-widget">
+                <div class="widget-header">
+                    <h2>Compliance Risk Calculator</h2>
+                    <p>Check your exposure under ADA Title II & III and Section 504.</p>
+                </div>
+                <div id="assessment-interface" class="interface-card">
+                    <div id="start-view" class="fade-in">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px; text-align: center;">⚖️</div>
+                        <h3 style="text-align: center;">Start Your Risk Analysis</h3>
+                        <p style="text-align: center;">Over 5,000 digital accessibility lawsuits were filed in 2025 alone. Are you at risk?</p>
+                        <button onclick="startAssessment()" class="action-btn primary" style="margin-top:20px;">Begin Free Assessment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compliance-widget">
+                <div class="widget-header">
+                    <h2>Request Technical Audit</h2>
+                    <p>Get a WCAG 2.2 AA breakdown sent to your inbox.</p>
+                </div>
+                <div class="interface-card" style="min-height: auto;">
+                    <form id="audit-form">
+                        <label for="user_email" style="display:block; margin-bottom:8px; font-weight:600;">Email Address (Required)</label>
+                        <input type="email" name="user_email" id="user_email" required autocomplete="email" placeholder="name@organization.org">
+                        <button type="submit" class="action-btn primary">Generate Audit Report</button>
+                    </form>
+                    <div id="audit-status" style="margin-top:15px; font-weight:600;" aria-live="polite"></div>
+                </div>
+            </div>
         </div>
     </section>
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+ 
+
+        
+
